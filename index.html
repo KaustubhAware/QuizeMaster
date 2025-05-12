@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="is.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">QuizeMaster</a>
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="register.php">Join </a></li>
+        </ul>
+    </header>
+
+    <section class="home-section">
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+        <!-- <img src="https://raw.githubusercontent.com/Ryoley/moonlight-parallax/main/assets/images/stars.png" alt="Stars overlay" id="stars"> -->
+        <img src="https://raw.githubusercontent.com/Ryoley/moonlight-parallax/main/assets/images/moon.png" alt="Moon" id="moon">
+        <img src="https://raw.githubusercontent.com/Ryoley/moonlight-parallax/main/assets/images/mountains_back.png" alt="Mountains back" id="mountains_back">
+        <a href="#about" id="btn-letsgo">Let's go!</a>
+        <img src="https://raw.githubusercontent.com/Ryoley/moonlight-parallax/main/assets/images/mountains_front.png" alt="Mountains front" id="mountains_front">
+    </section>
+
+    <section class="about-section" id="about">
+        <h3>Welcome to the Quiz App! Are you ready to challenge your knowledge and have a great time?</h3>
+        <p>This quiz will test your skills in various categories. You'll have a limited amount of time to answer each question, so think quickly!</p>
+        <p>Are you ready to begin? Click the button below to get started.</p>
+        
+        <h3>What is QuizeMaster</h3>
+        <p>
+            Quiz Master complements offline quizzes by offering a broader reach, convenience, flexibility, and enhanced learning experiences.
+            We make quizzing more accessible, engaging, and diverse, enriching the overall quizzing culture.
+        </p>
+        
+        <h3>About us</h3>
+        <p class="about-us">
+            Good Morning everyone, myself SK and I am Welcoming you all, so let's get started, QuizMaster, a place where quizzes become an adventure! Our app is your go-to destination for fun, knowledge, and challenges. From diverse topics to engaging questions, we've crafted a seamless experience for quiz enthusiasts of all levels. Join us in the pursuit of learning and excitement. Signup on QuizMaster now and let the quizzes begin!
+        </p>
+        <button onclick="readContent()" class="myButton">Read for me</button>
+        
+        <div id="google_translate_element"></div>
+
+        <div class="row">
+            QuizMaster Copyright © 2024 - All rights reserved || Designed By: Kaustubh 
+        </div>
+    </section>
+
+    <footer>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script>
+            function readContent() {
+                let aboutUsContent = document.querySelector('.about-us').textContent;
+                
+                // Using the Web Speech API to read the content
+                let speech = new SpeechSynthesisUtterance(aboutUsContent);
+                window.speechSynthesis.speak(speech);
+            }
+        </script>
+        <script>
+            gsap.from("#leftside", {
+                scrollTrigger: {
+                    scrub: true,
+                },
+                x: -100,
+            });
+
+            gsap.from("#rightside", {
+                scrollTrigger: {
+                    scrub: true,
+                },
+                x: 100,
+            });
+
+            gsap.from("#leftpumpkin", {
+                scrollTrigger: {
+                    scrub: true,
+                },
+                x: -150,
+            });
+
+            gsap.from("#rightpumpkin", {
+                scrollTrigger: {
+                    scrub: true,
+                },
+                x: 150,
+            });
+
+            var swiper = new Swiper(".swiper", {
+                speed: 700,
+                enabled: true,
+                parallax: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+        </script>
+        <script src="./is.js"></script>
+    </footer>
+</body>
+</html>
